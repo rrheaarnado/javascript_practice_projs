@@ -1,74 +1,145 @@
 const menu = [
   {
     id: 1,
-    title: "buttermilk pancakes",
-    category: "breakfast",
-    price: 15.99,
-    img: "./images/item-1.jpeg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    title: "Co-Working",
+    duration: "(Hourly)",
+    category: "co-working",
+    price: 50,
+    img: "./images/co-working.jpeg",
+    desc: `Co-working space available at an hourly rate with high-speed internet and comfortable seating.`,
   },
   {
     id: 2,
-    title: "diner double",
-    category: "lunch",
-    price: 13.99,
-    img: "./images/item-2.jpeg",
-    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    title: "Co-Working",
+    duration: "(Early Bird)",
+    category: "co-working",
+    price: 300,
+    img: "./images/co-working1.jpg",
+    desc: `Early bird co-working package for the whole day at a discounted rate.`,
   },
   {
     id: 3,
-    title: "godzilla milkshake",
-    category: "shakes",
-    price: 6.99,
-    img: "./images/item-3.jpeg",
-    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+    title: "Co-Working",
+    duration: "(Regular)",
+    category: "co-working",
+    price: 400,
+    img: "./images/co-working2.jpeg",
+    desc: `Regular full-day co-working package with unlimited coffee and high-speed internet.`,
   },
-  {
-    id: 4,
-    title: "country delight",
-    category: "breakfast",
-    price: 20.99,
-    img: "./images/item-4.jpeg",
-    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
-  },
+
   {
     id: 5,
-    title: "egg attack",
-    category: "lunch",
-    price: 22.99,
-    img: "./images/item-5.jpeg",
-    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+    title: "Meeting Room",
+    duration: "(4 Pax)",
+    category: "meeting room",
+    price: 400,
+    img: "./images/meetingroom1.jpg",
+    desc: `Private meeting room for up to 4 people with projector and whiteboard.`,
   },
   {
     id: 6,
-    title: "oreo dream",
-    category: "shakes",
-    price: 18.99,
-    img: "./images/item-6.jpeg",
-    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+    title: "Meeting Room",
+    duration: "(8 Pax)",
+    category: "meeting room",
+    price: 600,
+    img: "./images/meetingroom2.jpeg",
+    desc: `Spacious meeting room for up to 8 people with projector, whiteboard, and refreshments.`,
   },
   {
     id: 7,
-    title: "bacon overflow",
-    category: "breakfast",
-    price: 8.99,
-    img: "./images/item-7.jpeg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+    title: "Meeting Room",
+    duration: "(12 Pax)",
+    category: "meeting room",
+    price: 800,
+    img: "./images/meetingroom3.jpeg",
+    desc: `Large meeting room for up to 12 people with complete audio-visual setup and refreshments.`,
   },
   {
     id: 8,
-    title: "american classic",
-    category: "lunch",
-    price: 12.99,
-    img: "./images/item-8.jpeg",
-    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+    title: "Hybrid Pass",
+    duration: "(10 days)",
+    category: "co-working",
+    price: 1500,
+    img: "./images/co-working3.png",
+    desc: `10-day hybrid pass for flexible co-working with access to all amenities.`,
   },
   {
     id: 9,
-    title: "quarantine buddy",
-    category: "shakes",
-    price: 16.99,
-    img: "./images/item-9.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    title: "Overnight Pass",
+    duration: "(9PM Onwards)",
+    category: "co-working",
+    price: 500,
+    img: "./images/co-working.jpeg",
+    desc: `Overnight co-working pass with 24-hour access and complimentary refreshments.`,
+  },
+  {
+    id: 10,
+    title: "Private Office",
+    duration: "(1-2 Pax)",
+    category: "private office",
+    price: 6000,
+    img: "./images/privateoffice1.jpeg",
+    desc: `Private office space for 1-2 people with dedicated workstations and internet access.`,
+  },
+  {
+    id: 11,
+    title: "Private Office",
+    duration: "(2-4 Pax)",
+    category: "private office",
+    price: 90000,
+    img: "./images/privateoffice2.jpeg",
+    desc: `Private office space for 2-4 people with dedicated workstations and internet access.`,
+  },
+  {
+    id: 12,
+    title: "Private Office",
+    duration: "(6-8 Pax)",
+    category: "private office",
+    price: 120000,
+    img: "./images/privateoffice3.jpeg",
+    desc: `Private office space for 6-8 people with dedicated workstations and internet access.`,
+  },
+  {
+    id: 13,
+    title: "Private Office",
+    duration: "(8-12 Pax)",
+    category: "private office",
+    price: 200000,
+    img: "./images/privateoffice4.jpeg",
+    desc: `Private office space for 8-12 people with dedicated workstations and internet access.`,
   },
 ];
+
+const sectionCenter = document.querySelector('.section-center')
+
+window.addEventListener("DOMContentLoaded", function () {
+  displayItems(menu);
+
+});
+
+function displayItems(item) {
+
+  let displayMenu = item.map(function (item) {
+    // console.log(item);
+    return `
+    <article class="menu-item">
+    <img src= ${item.img} class="photo">
+    <div class="item-info">
+      <header>
+        <div> <h4>${item.title}</h4>
+        <h5>${item.duration}</h5>
+        </div>
+        <h5 class=""price>₱${item.price}</h5>
+      </header>
+
+      <p class="item-text">
+        ${item.desc}
+      </p>
+    </div>
+  </article>`;
+  });
+
+  displayMenu = displayMenu.join("");
+  sectionCenter.innerHTML = displayMenu;
+
+}
